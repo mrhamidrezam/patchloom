@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "patchloom"
+version = "0.1.0"
+description = "Zero-dependency RFC 6902 JSON Patch, RFC 7396 Merge Patch, reversible structural diff & three-way merge engine for Python 3.12+."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Hamidreza", email = "h4midrezam@gmail.com" }
+]
+keywords = [
+    "json-patch",
+    "rfc6902",
+    "rfc6901",
+    "rfc7396",
+    "json-pointer",
+    "merge-patch",
+    "structural-diff",
+    "three-way-merge",
+    "reversible-patch",
+    "zero-dependency",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: General",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/mrhamidrezam/patchloom"
+Repository = "https://github.com/mrhamidrezam/patchloom"
+Issues = "https://github.com/mrhamidrezam/patchloom/issues"
+Changelog = "https://github.com/mrhamidrezam/patchloom/releases"
+
+[project.scripts]
+patchloom = "patchloom.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+patchloom = ["py.typed"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
